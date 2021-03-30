@@ -25,7 +25,10 @@ def predict():
         Age=int(request.form['Age'])
         predictions=model.predict([[Pregnancies, Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedgreeFunction,Age]])
         prediction_text=predictions
-        
+        if output==1:
+            return render_template('index.html', prediction_text= predictions)
+        else:
+            return render_template('index.html', prediction_text=predictions)
         else:
             return render_template('index.html')
         
