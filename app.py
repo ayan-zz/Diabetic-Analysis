@@ -24,7 +24,8 @@ def predict():
         DiabetesPedgreeFunction=float(request.form['DiabetesPedgreeFunction'])
         Age=int(request.form['Age'])
         predictions=model.predict([[Pregnancies, Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedgreeFunction,Age]])
-        if predictions==0:
+        output=round(predictions[0],2)
+        if output==1:
             return render_template('index.html', prediction_text="Diabetic.\n Consult doctor immediately")
         else:
             return render_template('index.html', prediction_text="Non-diabetic.\n Stay fit and Healthy")
