@@ -45,8 +45,10 @@ Observations:
 -Although we can impute the missing values in BMI with respect to the mean of each outcome but using TARGET Variable to impute values.
 -Let us fill the missing values by overall mean of the entire data in the BMI column.
 We had succesfully imputed the missing values not by just random mean or zero valus.The missing values are imputed depending as per co-relation observed with other features and binning the age, BMI and Glucose column. Later on removed the bins.
-Although we havent seen much change in feature engg. We found #### Glucose as most relevant feature.
-##### Hyper-parameter tunning
+Although we havent seen much change in feature engg. 
+###### We found Glucose as most relevant feature.
+
+#### Hyper-parameter tunning
 Using RandomsearchCV in LG reg, KNN and XGboost for best results.
 We have much improved the models. Although the accuracy of logestic regression found out to bethe heighest of 0.77. The accuracy of KNN found to be 0.72 with f1 score of 0.60which is also lower than Logestic regression. But the sensitivity was higher with value 0.80.Again we have 0.94 vaue of sensitivity for XGBoost. We will consider Logistic Regression as the best performing model among three. 
 ##### Hence using Logestic regression for further predictions
